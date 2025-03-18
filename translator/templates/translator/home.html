@@ -1,0 +1,27 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+    <h1>This is Home page of AI sign language translator</h1>
+    <a href="{% url 'about'%}">Go to About</a> <br>
+    <a href="{%url 'contact' %}">Go to Contact</a> <br> <br>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="user_input">Enter The text:</label>
+        <input type="text" id="user_input" name="user_input">
+        <button type="submit"> Submit </button>
+
+    </form>
+    {% if output %}
+    <p>You Entered: {{ output }}</p>
+    <p>{% endif %}</p>
+
+</body>
+
+</html>
